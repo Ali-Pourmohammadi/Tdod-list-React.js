@@ -1,11 +1,10 @@
 import { useState } from "react"
 
-export default function Form({addItem}){
-    const [itemValue , setItemValue] = useState("");
+export default function Form({addItem , itemValue , setItemValue}){
     function handleSubmit(e){
         e.preventDefault();
         const id = crypto.randomUUID();
-        const newItem = {itemValue ,  id  , done :false}
+        const newItem = {itemValue ,  id  , done:false}
         addItem(newItem);
         setItemValue("");
     }

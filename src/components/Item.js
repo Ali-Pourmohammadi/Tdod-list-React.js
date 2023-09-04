@@ -1,10 +1,10 @@
-export default function Item({item , onDelete}){
+export default function Item({item , onDelete , onEdit}){
     return(<li className="item">
         <div>
-        <span className="check-input">
+        <span className="check-input" onClick={()=> onEdit(item)}>
             <input type="checkBox" />
         </span>
-        <span className="item-text">{item.itemValue}</span>
+        <span className="item-text">{item.done ? "✔ Done !" : item.itemValue}</span>
         </div>
         <div>
             <span className="toggle-edit">🎫</span>
