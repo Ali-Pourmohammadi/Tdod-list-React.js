@@ -1,13 +1,90 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+.todo-container{
+    width: 50rem;
+    padding: 3rem;
+
+    margin: 5rem auto;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.form{
+    width: 100%;
+    display:  flex;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    justify-content: space-between;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+.form div{
+    width: 70%;
+
+}
+.form div input {
+    width: 70%;
+    padding: 1rem .5rem;
+    font-size: 1.2rem;
+    outline: none   ;
+    border: none;
+    margin-right: 2rem;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+.form label {
+    margin-top: 1rem;
+}
+.btn-submit{
+    font-size: 1.2rem;
+    padding: .5rem 1rem ;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    border-radius: .5rem;
+    transition: .3s;
+}
+.btn-submit:hover{
+    border: 1px solid black;
+    background-color: rgb(54, 163, 206);
+}
+.item-container{
+    width: 100%;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    border-radius: .3rem;
+    padding: 1.5rem;
+    list-style-type: none;
+}
+.item{
+    width: 100%;
+    /* background-color: red; */
+    padding:1rem 0 ;
+    margin: 1rem  0;
+    display: flex;
+    justify-content: space-between;
+}
+.item-text{
+    font-size: 1.4rem !important;
+    margin: 0 .5rem;
+}
+.check-input input{
+    height: 1.2rem;
+    width: 1.2rem;
+    accent-color: #e5771f;
+    cursor: pointer;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.toggle-edit , .toggle-close{
+    font-size: 1.3rem;
+    cursor: pointer;
+    margin: 0 .5rem;
+}
+.status-bar{
+    text-align: center;
+    width: 90%;
+    margin-top: 2rem;
+    padding: 1.5rem;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
