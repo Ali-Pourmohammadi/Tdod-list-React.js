@@ -1,14 +1,14 @@
-export default function Item(){
+export default function Item({item , onDelete}){
     return(<li className="item">
         <div>
         <span className="check-input">
             <input type="checkBox" />
         </span>
-        <span className="item-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, et.</span>
+        <span className="item-text">{item.itemValue}</span>
         </div>
         <div>
             <span className="toggle-edit">🎫</span>
-            <span className="toggle-close">❌</span>
+            <span onClick={()=>onDelete(item)} className="toggle-close">❌</span>
         </div>
     </li>)
 }
