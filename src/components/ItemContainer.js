@@ -1,9 +1,9 @@
 import Item from "./Item"
-export default function ItemContainer({arrayItems , onDelete , onEdit}){
+export default function ItemContainer({arrayItems , onDelete , onPassed , onEdit}){
     const items = arrayItems;
    return( <ul className={`item-container ${items.length === 0 ? "display-none":""}`}>
     {
-        items.map(item=> <Item onEdit ={onEdit} onDelete = {onDelete} item={item} key={item.id}/>)
+items.map(newItem=><Item onEdit = {onEdit} onPassed={onPassed} onDelete = {onDelete} newItem={newItem} key={newItem.id}/>)
     }
     </ul>)
 }

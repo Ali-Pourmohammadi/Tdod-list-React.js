@@ -5,7 +5,8 @@ import Status from "./StatusBar"
 export default function TodoContainer(){
     const [itemValue , setItemValue] = useState("");
     const [items , setItems] = useState([]);
-    const [editMode , setEditMode] = useState(false);
+    const [editMode  , setEditMode] = useState(false)
+    const [editItemId , setEditItemId] = useState(null);
     // add  Item
     function handleAddItem(item){
         setItems([...items , item])
@@ -18,10 +19,15 @@ export default function TodoContainer(){
     function handleDone (curr){
         setItems(items=>items.map(item=> item.id ===curr.id ? {...item  , done : !item.done}:item));
     }
-    function handleEdit(){}
+
+    function handleEdit(curr){
+        setEditMode(editMode=> !editMode);
+        setEditItemId(curr.id)
+        setItemValue(curr.itemValue);   
+    }
     return(<div className="todo-container">
-        <Form addItem = {handleAddItem} itemValue = {itemValue} setItemValue ={setItemValue} />
-        <ItemContainer arrayItems = {items} onDelete ={handleDelete} onEdit = {handleDone}/>
-        <Status arrayItems = {items}/>
+        <Form setItems = {setItems} items = {items} addItem = {handleAddItem} itemValue = {itemValue} setItemValue ={setItemValue} editMode={editMode} setEditMode = {setEditMode} editItemId={editItemId} setEditItemID={setEditItemId}  />
+        <ItemContainer arrayItems = {items} onDelete ={handleDelete} onPassed = {handleDone}  onEdit={handleEdit}/>
+        <Status arrayItems = {items} />
     </div>)
 }

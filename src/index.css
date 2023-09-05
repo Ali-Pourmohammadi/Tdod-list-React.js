@@ -1,93 +1,145 @@
+body{
+    background-color: #d8b0ff; /* Light Gray */
+
+    }
 *{
-    font-family: Arial, Helvetica, sans-serif;
+ 
     padding: 0;
     margin: 0;
 }
 .todo-container{
-    width: 50rem;
-    padding: 3rem;
-
-    margin: 5rem auto;
-    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+     width: 30rem;
+     background-color: #30074d; /* Dark Purple */
+     padding : 1rem 4rem 6rem 4rem;
+    margin: 3rem auto;
     display: flex;
+    border-radius: .4rem;
     flex-direction: column;
     align-items: center;
+    position: relative;
 }
 .form{
     width: 100%;
-    display:  flex;
+    display:  flex; 
     padding: 1rem;
-    margin-bottom: 1.5rem;
-    justify-content: space-between;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-}
-.form div{
-    width: 70%;
+    /* margin-bottom: 1.5rem; */
+    flex-direction: column;
+    align-items: center;
+    border-radius: .3rem;
+    background-color: #30074d; 
 
 }
-.form div input {
-    width: 70%;
-    padding: 1rem .5rem;
+.form div{
+    position: relative;
+    background-color: #4457C9;
+    width: 100%;
+    display: flex;    
+    justify-content: center;
+
+}
+/* Style for the to-do input */
+input[type="text"] {
+    width: 95%;
+    padding: 1rem;
+    border: 1px solid #fff;
+    border-radius: 2px;
+    background-color: #7c32cc;
+    /* background-color: #30074d;  */
+
     font-size: 1.2rem;
-    outline: none   ;
-    border: none;
-    margin-right: 2rem;
-    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    color: #fff; 
+    outline: none;
 }
 .form label {
-    margin-top: 1rem;
+    margin: 2rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: 2.5rem;
+    color: #fff;
 }
 .btn-submit{
     font-size: 1.2rem;
-    padding: .5rem 1rem ;
     cursor: pointer;
-    background-color: transparent;
     border: none;
-    border-radius: .5rem;
+    border-radius: 2px;
     transition: .3s;
+    border: 2px solid #fff;
+    padding:  1rem 2.5rem ;
+    background-color: transparent;
+    position: absolute;
+    color: #f2f2f2;
+    top :0;
+    right: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
 }
 .btn-submit:hover{
-    border: 1px solid black;
-    background-color: rgb(54, 163, 206);
+background-color: #30074d; /* Dark Purple */
+
 }
+
+
 .item-container{
-    width: 100%;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-    border-radius: .3rem;
-    padding: 1.5rem;
+    width: 100% !important;
     list-style-type: none;
+    border-radius: .3rem;
 }
 .item{
-    width: 95%;
-    padding:1rem ;
-    margin: 2rem  0;
-    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;    display: flex;
-    justify-content: space-between;
+    width: 100% ;
+    margin:1.5rem 0;
     border-radius: .3rem;
-}
-.item-text{
-    font-size: 1.4rem !important;
-    margin: 0 .5rem;
-}
-.check-input input{
-    height: 1.2rem;
-    width: 1.2rem;
-    accent-color: #e5771f;
+    background-color: #7c32cc;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    padding: .3rem 0;
+    justify-content: space-between;
     cursor: pointer;
 }
 
+.item .toggle-btns{
+    width: 20%;
+    margin-top: .8rem;
+}
+.item .title-box{
+width: 80%;
+display: flex;
+justify-content: flex-start;
+}
+.item .title-box span {
+padding: .5rem;
+font-size: 1.8rem;
+color:#f2f2f2;
+text-decoration-thickness: bold;
+}
+
+.check-input input{
+    height: 1.2rem;
+    width: 1.2rem;
+    margin-top: .3rem;
+    accent-color: #e5771f;
+    cursor: pointer;
+}
+.item-text{
+    font-size: 1.5rem;
+    width: 100%;
+    text-align: left;
+}
 .toggle-edit , .toggle-close{
     font-size: 1.3rem;
     cursor: pointer;
     margin: 0 .5rem;
 }
 .status-bar{
+    width: 100%;
+    padding: 2rem 0;
+    bottom: 0;
     text-align: center;
-    width: 90%;
-    margin-top: 2rem;
-    padding: 1.5rem;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    font-family:s;
+    color: #fff;
+    border: 1px solid #fff;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    position: absolute;
 }
 .display-none{
     display: none;
-}
+};

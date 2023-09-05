@@ -1,14 +1,12 @@
-export default function Item({item , onDelete , onEdit}){
+export default function Item({newItem , onDelete , onPassed , onEdit}){
     return(<li className="item">
-        <div>
-        <span className="check-input" onClick={()=> onEdit(item)}>
-            <input type="checkBox" />
-        </span>
-        <span className="item-text">{item.done ? "✔ Done !" : item.itemValue}</span>
+        <div className="title-box">
+
+        <span onClick={()=>onPassed(newItem)} className="item-text">{newItem.done ? "done ! ✔ " : newItem.itemValue} </span>
         </div>
-        <div>
-            <span className="toggle-edit">🎫</span>
-            <span onClick={()=>onDelete(item)} className="toggle-close">❌</span>
+        <div className="toggle-btns">
+            <span onClick={()=> onEdit(newItem)} className="toggle-edit">🎫</span>
+            <span onClick={()=>onDelete(newItem)} className="toggle-close">❌</span>
         </div>
     </li>)
 }
