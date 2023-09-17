@@ -5,8 +5,9 @@ import Status from "./StatusBar"
 export default function TodoContainer(){
     const [itemValue , setItemValue] = useState("");
     const [items , setItems] = useState(function(){
-        const storedItems = localStorage.getItem("items");
-        return JSON.parse(storedItems)
+        const stroredItems = localStorage.getItem("items");
+        if(!stroredItems) return[];
+        return JSON.parse(stroredItems);
     });
     const [editMode  , setEditMode] = useState(false)
     const [editItemId , setEditItemId] = useState(null);
