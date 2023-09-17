@@ -1,10 +1,13 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Form from "./Form"
 import ItemContainer from "./ItemContainer"
 import Status from "./StatusBar"
 export default function TodoContainer(){
     const [itemValue , setItemValue] = useState("");
-    const [items , setItems] = useState([]);
+    const [items , setItems] = useState(function(){
+        const storedItems = localStorage.getItem("items");
+        return JSON.parse(storedItems)
+    });
     const [editMode  , setEditMode] = useState(false)
     const [editItemId , setEditItemId] = useState(null);
     // add  Item
@@ -19,6 +22,9 @@ export default function TodoContainer(){
     function handleDone (curr){
         setItems(items=>items.map(item=> item.id ===curr.id ? {...item  , done : !item.done}:item));
     }
+    useEffect(function(){
+        localStorage.setItem("items" , JSON.stringify(items));
+    },[items])
 
     function handleEdit(curr){
         setEditMode(editMode=> !editMode);
